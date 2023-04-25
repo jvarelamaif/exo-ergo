@@ -2,18 +2,16 @@ import React from 'react';
 // import './AccordionItem.scss';
 import PropTypes from 'prop-types';
 
-const AccordionItem = ({ id, title, content, isActive, onAccordionClick }) => (
+const AccordionItem = ({id, title, content, isActive, onAccordionClick}) => (
     <section className="accordion-item">
-        <h2>
-            <button
-                id={`accordion-${id}`}
-                aria-controls={`accordion-content-${id}`}
-                aria-expanded={isActive}
-                onClick={() => onAccordionClick(id)}
-            >
-                {title}
-            </button>
-        </h2>
+        <button
+            id={`accordion-${id}`}
+            aria-controls={`accordion-content-${id}`}
+            aria-expanded={isActive}
+            onClick={() => onAccordionClick(id)}
+        >
+            <h2>{title}</h2>
+        </button>
         <div
             id={`accordion-content-${id}`}
             aria-labelledby={`accordion-${id}`}
@@ -30,7 +28,7 @@ AccordionItem.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     isActive: PropTypes.bool.isRequired,
-    onAccordionClick: PropTypes.func.isRequired,
+    onAccordionClick: PropTypes.func.isRequired
 };
 
 
