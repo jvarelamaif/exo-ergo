@@ -1,0 +1,42 @@
+// Variables
+$tab-active-color: #007bff;
+$tab-inactive-color: #ccc;
+$tab-hover-color: #666;
+$tab-content-border-color: #ddd;
+$tab-transition-duration: 0.3s;
+
+li {
+  flex: 1;
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    color: $tab-inactive-color;
+    transition: border-color $tab-transition-duration, color $tab-transition-duration;
+
+    &:hover,
+    &:focus {
+      color: $tab-hover-color;
+      outline: none;
+    }
+
+    &[aria-selected='true'] {
+      color: $tab-active-color;
+      border-bottom-color: $tab-active-color;
+    }
+  }
+
+  section {
+    padding: 1rem;
+    border: 1px solid $tab-content-border-color;
+    border-top: none;
+
+    h2 {
+      display: none;
+    }
+  }
+}

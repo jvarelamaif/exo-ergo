@@ -1,0 +1,9 @@
+// Variables
+$accordion-border-color: #ddd;
+
+section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $accordion-border-color;
+  margin-bottom: 1rem;
+}

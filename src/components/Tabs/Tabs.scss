@@ -1,0 +1,25 @@
+// Variables
+$tab-border-color: #ddd;
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  border-bottom: 1px solid $tab-border-color;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+
+  .tab-content {
+    width: 100%;
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
+
+
+
+

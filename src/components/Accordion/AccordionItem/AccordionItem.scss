@@ -1,0 +1,49 @@
+$accordion-header-color: #333;
+$accordion-header-background: #f5f5f5;
+$accordion-header-hover-background: #e9e9e9;
+$accordion-content-padding: 1rem;
+$accordion-transition-duration: 0.3s;
+
+.accordion-item {
+  min-height: 10rem;
+
+  h2 {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background: $accordion-header-background;
+    font-size: 1.1rem;
+    color: $accordion-header-color;
+    cursor: pointer;
+    transition: background $accordion-transition-duration;
+    flex-shrink: 0;
+
+    button {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: inherit;
+      color: inherit;
+      padding: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background: $accordion-header-hover-background;
+    }
+  }
+
+  div {
+    padding: $accordion-content-padding;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height $accordion-transition-duration;
+    flex-grow: 1;
+
+    &[aria-hidden="false"] {
+      max-height: 1000px;
+    }
+  }
+}
